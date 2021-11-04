@@ -13,7 +13,6 @@ for i in $(seq 2 $numArgs); do
   echo "$test:"
   $1 $test -o $test.o
   retCode=$?
-  sleep 1
   if (($retCode == 0)); then
     timeout 5m ./$test.o
     retCode=$?
