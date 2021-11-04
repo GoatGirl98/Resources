@@ -11,7 +11,7 @@ jobs:
     - name: Replace pragma once
       run: C:\msys64\usr\bin\find "Content/" -name "*.h" -printf "%p " | C:\msys64\usr\bin\xargs python3 Scripts/ReplacePragmas.py
     - name: Run fuzz tests
-      run: C:\msys64\usr\bin\find "Tests/" -name "*FuzzTest.cpp" -printf "%p " | C:\msys64\usr\bin\xargs Scripts/RunCppTests.sh "C:\msys64\mingw64\bin\g++ -std=c++11 -O2 -Wall -Wextra -pedantic-errors -Werror -Wl,--stack,1000000000"
+      run: C:\msys64\usr\bin\find "Tests/" -name "*FuzzTest.cpp" -printf "%p " | C:\msys64\usr\bin\xargs Scripts/RunCppTests.sh "C:\msys64\mingw64\bin\g++ -std=c++11 -O2 -Wall -Wl,--stack,1000000000"
   stress-tests-cpp:
     runs-on: windows-latest
     steps:
@@ -22,4 +22,4 @@ jobs:
     - name: Replace pragma once
       run: C:\msys64\usr\bin\find "Content/" -name "*.h" -printf "%p " | C:\msys64\usr\bin\xargs python3 Scripts/ReplacePragmas.py
     - name: Run stress tests
-      run: C:\msys64\usr\bin\find "Tests/" -name "*StressTest.cpp" -printf "%p " | C:\msys64\usr\bin\xargs Scripts/RunCppTests.sh "C:\msys64\mingw64\bin\g++ -std=c++11 -O2 -Wall -Wextra -pedantic-errors -Werror -Wl,--stack,1000000000"
+      run: C:\msys64\usr\bin\find "Tests/" -name "*StressTest.cpp" -printf "%p " | C:\msys64\usr\bin\xargs Scripts/RunCppTests.sh "C:\msys64\mingw64\bin\g++ -std=c++11 -O2 -Wall -Wl,--stack,1000000000"
