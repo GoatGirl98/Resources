@@ -14,7 +14,7 @@ for i in $(seq 2 $numArgs); do
   $1 $test -o $test.o
   retCode=$?
   if (($retCode == 0)); then
-    ./$test.o
+    timeout 5m ./$test.o
     retCode=$?
     if (($retCode == 0)); then
       pass+=1
